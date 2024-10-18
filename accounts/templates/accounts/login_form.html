@@ -1,0 +1,46 @@
+{% extends "accounts/layout.html" %}
+{% load bootstrap4 %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 offset-sm-3" >
+            <div class="card" >
+                {% if form_title %}
+                    <div class="card-header">
+                        {{ form_title }}
+                    </div>
+                {% endif %}
+                <div class="card-body">
+                    <form action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+                    {% buttons %}
+                        <button type="submit" class="btn btn-primary" >
+                            로그인
+                        </button>
+                        <a href="/accounts/signup/" class="btn btn-primary">회원가입</a>
+                    {% endbuttons %}
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+{#<ul class="list-group list-group-flush">#}
+{#    <li class="list-group-item">An item</li>#}
+{#    <li class="list-group-item">A second item</li>#}
+{#    <li class="list-group-item">A third item</li>#}
+{#  </ul>#}

@@ -1,0 +1,30 @@
+{% load bootstrap4 %}
+
+
+<div class="card" >
+    {% if form_title %}
+        <div class="card-header">
+            {{ form_title }}
+        </div>
+    {% endif %}
+    <div class="card-body">
+        <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons %}
+            <button type="submit" class="btn btn-primary" >
+                {{ submit_label|default:"Submit" }}
+            </button>
+        {% endbuttons %}
+    </form>
+    </div>
+</div>
+
+
+
+
+{#<ul class="list-group list-group-flush">#}
+{#    <li class="list-group-item">An item</li>#}
+{#    <li class="list-group-item">A second item</li>#}
+{#    <li class="list-group-item">A third item</li>#}
+{#  </ul>#}
